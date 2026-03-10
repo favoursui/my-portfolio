@@ -1111,3 +1111,307 @@ video {
     color: rgb(255 255 255 / var(--tw-text-opacity, 1));
   }
 }
+
+
+/* style.css */
+
+/* ============================================
+   THEME VARIABLES & TRANSITIONS
+   ============================================ */
+
+/* Smooth theme transitions for all elements */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ============================================
+   DARK MODE (Default - Slate Theme)
+   ============================================ */
+:root {
+    --bg-primary: #0f172a;        /* slate-900 */
+    --bg-secondary: #020617;       /* slate-950 */
+    --bg-card: #1e293b;           /* slate-800 */
+    --bg-hover: #334155;          /* slate-700 */
+    
+    --text-primary: #f8fafc;      /* slate-50 */
+    --text-secondary: #f1f5f9;    /* slate-100 */
+    --text-muted: #cbd5e1;        /* slate-300 */
+    --text-subtle: #94a3b8;       /* slate-400 */
+    
+    --border-color: #1e293b;      /* slate-800 */
+    --accent: #60a5fa;            /* blue-400 */
+}
+
+/* ============================================
+   CREAM THEME
+   ============================================ */
+.cream-theme {
+    --bg-primary: #f7f1e3;        /* warm cream */
+    --bg-secondary: #efe4cd;      /* deeper cream */
+    --bg-card: #e6d4b8;           /* light tan */
+    --bg-hover: #d4b896;          /* darker tan */
+    
+    --text-primary: #5a4a3a;      /* dark brown */
+    --text-secondary: #705d47;    /* medium brown */
+    --text-muted: #8b7355;        /* light brown */
+    --text-subtle: #a68b5b;       /* muted brown */
+    
+    --border-color: #e6d4b8;      /* tan border */
+    --accent: #d97706;            /* amber/orange */
+}
+
+/* ============================================
+   BASE STYLES USING CSS VARIABLES
+   ============================================ */
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Background colors */
+.bg-slate-900 {
+    background-color: var(--bg-primary) !important;
+}
+
+.bg-slate-950 {
+    background-color: var(--bg-secondary) !important;
+}
+
+.bg-slate-800 {
+    background-color: var(--bg-card) !important;
+}
+
+.bg-slate-700 {
+    background-color: var(--bg-hover) !important;
+}
+
+.bg-slate-100 {
+    background-color: var(--text-primary) !important;
+    color: var(--bg-primary) !important;
+}
+
+/* Text colors */
+.text-slate-50 {
+    color: var(--text-primary) !important;
+}
+
+.text-slate-100 {
+    color: var(--text-secondary) !important;
+}
+
+.text-slate-200 {
+    color: var(--text-secondary) !important;
+}
+
+.text-slate-300 {
+    color: var(--text-muted) !important;
+}
+
+.text-slate-400 {
+    color: var(--text-subtle) !important;
+}
+
+.text-slate-500 {
+    color: var(--text-subtle) !important;
+}
+
+/* Accent colors */
+.text-blue-400 {
+    color: var(--accent) !important;
+}
+
+.bg-blue-400 {
+    background-color: var(--accent) !important;
+}
+
+/* Border colors */
+.border-slate-800 {
+    border-color: var(--border-color) !important;
+}
+
+.border-slate-600 {
+    border-color: var(--text-subtle) !important;
+}
+
+/* Navigation specific */
+nav {
+    background-color: rgba(var(--bg-primary), 0.8);
+    backdrop-filter: blur(12px);
+    border-color: var(--border-color);
+}
+
+/* Card hover effects */
+.card-dark:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cream-theme .card-dark:hover {
+    box-shadow: 0 4px 20px rgba(212, 184, 150, 0.3);
+}
+
+/* Button hover states */
+.hover\:bg-slate-800:hover {
+    background-color: var(--bg-hover) !important;
+}
+
+.hover\:bg-white:hover {
+    background-color: var(--text-primary) !important;
+}
+
+.hover\:text-white:hover {
+    color: var(--text-primary) !important;
+}
+
+/* Links */
+a {
+    transition: color 0.3s ease;
+}
+
+/* Theme toggle button */
+#themeToggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+#themeToggle:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+#themeIcon {
+    font-size: 1.25rem;
+    display: block;
+}
+
+/* ============================================
+   ADDITIONAL UTILITIES
+   ============================================ */
+
+/* Ensure images don't break layout */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-card);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bg-hover);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    color: #cbd5e1; /* slate-300 */
+}
+
+.theme-toggle-btn:hover {
+    background-color: #1e293b; /* slate-800 */
+    color: #ffffff;
+}
+
+/* Cream Theme Overrides */
+html.cream-theme {
+    background-color: #fdfbf7;
+}
+
+html.cream-theme body {
+    background-color: #fdfbf7;
+    color: #5a4a3a;
+}
+
+/* Map slate colors to cream colors */
+html.cream-theme .bg-slate-900 {
+    background-color: #f7f1e3;
+}
+
+html.cream-theme .bg-slate-950 {
+    background-color: #efe4cd;
+}
+
+html.cream-theme .bg-slate-800 {
+    background-color: #e6d4b8;
+}
+
+html.cream-theme .bg-slate-100 {
+    background-color: #5a4a3a;
+    color: #fdfbf7;
+}
+
+html.cream-theme .text-slate-50 {
+    color: #5a4a3a;
+}
+
+html.cream-theme .text-slate-100 {
+    color: #705d47;
+}
+
+html.cream-theme .text-slate-200 {
+    color: #8b7355;
+}
+
+html.cream-theme .text-slate-300 {
+    color: #8b7355;
+}
+
+html.cream-theme .text-slate-400 {
+    color: #a68b5b;
+}
+
+html.cream-theme .text-slate-500 {
+    color: #c4a47c;
+}
+
+html.cream-theme .border-slate-800 {
+    border-color: #e6d4b8;
+}
+
+html.cream-theme .border-slate-600 {
+    border-color: #d4b896;
+}
+
+html.cream-theme .text-blue-400 {
+    color: #d97706; /* amber-600 */
+}
+
+html.cream-theme nav {
+    background-color: rgba(253, 251, 247, 0.8);
+    border-color: #e6d4b8;
+}
+
+html.cream-theme .theme-toggle-btn {
+    color: #8b7355;
+}
+
+html.cream-theme .theme-toggle-btn:hover {
+    background-color: #e6d4b8;
+    color: #5a4a3a;
+}
+
+/* Smooth transitions for theme switch */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
